@@ -1,0 +1,61 @@
+<div class= "flex-column d-flex flex-shrink-0 cont-compvent" style="width: 75%;">
+<h2>Compra - Venta <strong>Divisas</strong></h2>
+<hr>
+<form autocomplete="off" [formGroup]="forma" (ngSubmit)="crearOrden()">
+
+<h1 class="title">Ingresa monto</h1>
+
+    <div class="row g-2">
+        <div class="col-md">
+          <div class="form-floating">
+            <select class="form-select color" id="sel-cotiza-moneda-envia" aria-label="Floating label select example" name="monedaE" placeholder="Moneda envia" formControlName="monedaE">
+              <option value="CLP" >Peso Chileno</option>
+              <option value="USD" >Dolar Americano</option>
+              <option value="EUR" >Euro</option>
+              <option value="BRL" >Real Brasil</option>
+              <option value="ARP" >Peso Argentino</option>
+            </select>
+            <label for="floatingSelectGrid" style="color: white;">Moneda a Cambiar</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="form-floating">
+            <input type="text" class="form-control" placeholder="name@example.com" value="mdo@example.com" name="montoC" formControlName="montoC">
+            <label for="floatingInputGrid">Monto a cambiar</label>
+          </div>
+        </div>
+      </div>
+<br>
+      <div class="row g-2">
+        <div class="col-md">
+          <div class="form-floating">
+            <select class="form-select color" id="sel-cotiza-moneda-recibe" (change) = 'calcularCambio()' aria-label="Floating label select example" name="monedaR" placeholder="Moneda a recibir" formControlName="monedaR">
+              <option value="CLP" >Peso Chileno</option>
+              <option value="USD" >Dolar Americano</option>
+              <option value="EUR" >Euro</option>
+              <option value="BRL" >Real Brasil</option>
+              <option value="ARP" >Peso Argentino</option>
+            </select>
+            <label for="floatingSelectGrid" style="color: white;" >Moneda a recibir</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="form-floating">
+            <input type="text" readonly class="form-control" placeholder="name@example.com"  name="montoR" formControlName="montoR" value ="{{montor}}">
+            <label for="floatingInputGrid">Monto a recibir</label>
+          </div>
+        </div>
+      </div>
+<br>
+    
+    <div class="form-floating">
+        <label class="col-2 col-form-label">&nbsp;</label>
+        <div class="input-group col cont-btn">
+          <button type="submit" class="btn btn-outline-primary btn-block">
+            Crear Orden
+          </button>
+        </div>
+      </div>
+
+</form>
+</div>

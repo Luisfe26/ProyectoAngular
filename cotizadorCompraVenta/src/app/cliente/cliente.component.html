@@ -1,0 +1,19 @@
+<div class= "flex-column d-flex flex-shrink-0 cont-tipocambio" style="width: 75%;">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th scope="col" *ngFor="let campo of campos">
+                    {{campo}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let result of results">
+                <td *ngFor="let key of obj(result)">
+                    {{result[key]}}
+                </td>
+            </tr> 
+        </tbody>
+    </table>
+    </div>
+
